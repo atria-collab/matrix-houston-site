@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Matrix — Now Leasing — 3477 Reeves St, Houston</title>
+<style>
+  @page { size: 8.5in 11in; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 8.5in; height: 11in; }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #101828;
+    display: flex; flex-direction: column;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .hero {
+    position: relative; height: 4.2in; flex: none;
+    background: #101828 url("hero.jpg") center 35% / cover no-repeat;
+  }
+  .hero .shade {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(8,12,26,.55) 0%, rgba(8,12,26,.18) 34%, rgba(8,12,26,.42) 62%, rgba(8,12,26,.88) 100%);
+  }
+  .hero .top { position: absolute; top: .22in; left: .3in; right: .3in; display: flex; justify-content: space-between; align-items: center; }
+  .pill {
+    background: #ffb703; color: #101828; font-weight: 800; font-size: 14.5pt;
+    letter-spacing: .1em; padding: .07in .2in; border-radius: 3in;
+    box-shadow: 0 2px 10px rgba(0,0,0,.35);
+  }
+  .addr { color: #fff; font-weight: 600; font-size: 11.5pt; text-shadow: 0 1px 6px rgba(0,0,0,.65); text-align: right; line-height: 1.35; }
+  .hero .bottom { position: absolute; left: .3in; right: .3in; bottom: .2in; color: #fff; }
+  .hero h1 { font-size: 46pt; font-weight: 800; letter-spacing: .04em; line-height: .95; text-shadow: 0 2px 14px rgba(0,0,0,.5); }
+  .hero h1 span { color: #ffb703; }
+  .tagline { font-size: 15.5pt; font-weight: 600; margin-top: .06in; text-shadow: 0 1px 8px rgba(0,0,0,.6); }
+  .chips { display: flex; gap: .14in; margin-top: .14in; }
+  .chip {
+    background: rgba(255,255,255,.95); color: #101828; border-radius: .06in;
+    padding: .07in .14in .075in; text-align: center;
+  }
+  .chip b { display: block; font-size: 17pt; font-weight: 800; }
+  .chip i { display: block; font-style: normal; font-size: 9.5pt; font-weight: 600; color: #475467; letter-spacing: .05em; }
+  .strip {
+    flex: none; background: #14213d; color: #fff; text-align: center;
+    font-size: 12.5pt; font-weight: 700; padding: .1in 0; letter-spacing: .01em;
+  }
+  .strip em { font-style: normal; color: #ffb703; }
+  .main { flex: 1; display: flex; gap: .24in; padding: .2in .3in .12in; background: #fff; }
+  .photos { width: 2.95in; flex: none; display: flex; flex-direction: column; gap: .12in; }
+  .photos img { width: 100%; height: 1.5in; object-fit: cover; border-radius: .06in; display: block; }
+  .amen { flex: 1; }
+  .amen h2 { font-size: 15pt; font-weight: 800; color: #14213d; letter-spacing: .05em; margin-bottom: .09in; }
+  .amen h2 b { color: #ffb703; }
+  .amen ul { list-style: none; columns: 1; }
+  .amen li {
+    font-size: 11.6pt; font-weight: 600; line-height: 1.5; padding-left: .26in; position: relative; color: #222;
+  }
+  .amen li::before { content: "✓"; position: absolute; left: 0; top: 0; width: .2in; height: .2in;
+    background: #ffb703; color: #101828; font-weight: 800; font-size: 9.5pt; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; margin-top: .028in; }
+  .terms { flex: none; display: flex; gap: .12in; padding: 0 .3in .14in; background: #fff; }
+  .term {
+    flex: 1; background: #f4f6fa; border-top: .035in solid #ffb703; border-radius: .05in;
+    padding: .1in .12in; text-align: center;
+  }
+  .term b { display: block; font-size: 10.8pt; font-weight: 800; color: #14213d; line-height: 1.25; }
+  .term span { display: block; font-size: 9.3pt; color: #475467; font-weight: 600; margin-top: .03in; line-height: 1.3; }
+  .cta {
+    flex: none; background: #14213d; color: #fff; display: flex; align-items: center;
+    padding: .14in .3in .11in; gap: .2in;
+  }
+  .cta .left { flex: 1; }
+  .cta .label { font-size: 11pt; font-weight: 800; letter-spacing: .18em; color: #ffb703; }
+  .cta .phone { font-size: 29pt; font-weight: 800; letter-spacing: .01em; line-height: 1.04; margin: .02in 0 .04in; }
+  .cta .sub { font-size: 10.8pt; font-weight: 600; color: #dbe2ee; line-height: 1.45; }
+  .cta .sub b { color: #fff; }
+  .badge {
+    display: inline-block; margin-top: .07in; background: #ffb703; color: #101828;
+    font-weight: 800; font-size: 10.3pt; padding: .045in .12in; border-radius: 3in;
+  }
+  .qrbox { flex: none; text-align: center; }
+  .qrbox img { width: 1.02in; height: 1.02in; display: block; background: #fff; padding: .035in; border-radius: .05in; }
+  .qrbox span { display: block; font-size: 8.6pt; font-weight: 700; color: #dfe6f2; margin-top: .035in; letter-spacing: .04em; }
+  .foot {
+    flex: none; background: #101828; color: #9aa7bd; text-align: center;
+    font-size: 8pt; line-height: 1.45; padding: .055in .3in .075in;
+  }
+  .foot b { color: #d6deea; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="hero">
+    <div class="shade"></div>
+    <div class="top">
+      <div class="pill">GRAND OPENING · NOW LEASING</div>
+      <div class="addr">3477 Reeves St, Houston, TX 77004<br>Near UH &amp; TSU</div>
+    </div>
+    <div class="bottom">
+      <h1>THE <span>MATRIX</span></h1>
+      <div class="tagline">Brand-new gated condo homes — steps from campus</div>
+      <div class="chips">
+        <div class="chip"><b>from $624/mo</b><i>STUDIOS</i></div>
+        <div class="chip"><b>from $824/mo</b><i>1-BEDROOM</i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="strip">🎓 Walk to <em>University of Houston &amp; TSU</em> &nbsp;·&nbsp; Short commute to the <em>Texas Medical Center</em></div>
+
+  <div class="main">
+    <div class="photos">
+      <img src="p1.jpg" alt="Studio with floor-to-ceiling windows">
+      <img src="p2.jpg" alt="Bright studio living space">
+    </div>
+    <div class="amen">
+      <h2>WHY YOU&rsquo;LL <b>LOVE IT HERE</b></h2>
+      <ul>
+        <li>Gated entry &amp; 24/7 on-site security</li>
+        <li>Brand-new construction, move-in ready</li>
+        <li>Full-size appliances — range, fridge, microwave &amp; dishwasher</li>
+        <li>Washer/dryer hookups in every home</li>
+        <li>Central air &amp; heat</li>
+        <li>Tall windows &amp; balconies in select homes</li>
+        <li>Elevators &amp; resident common room</li>
+        <li>Internet-ready — Xfinity wired in building</li>
+        <li>Optional garage parking under the podium</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="terms">
+    <div class="term"><b>Water · Sewer · Trash</b><span>just $75/mo flat</span></div>
+    <div class="term"><b>Garage Parking</b><span>optional — $35/mo, under podium</span></div>
+    <div class="term"><b>Pets Welcome</b><span>1 cat + 1 dog · $300 deposit</span></div>
+    <div class="term"><b>12-Month Leases</b><span>easy online application</span></div>
+  </div>
+
+  <div class="cta">
+    <div class="left">
+      <div class="label">TEXT OR CALL TO BOOK TOURS</div>
+      <div class="phone">(934) 203-9990</div>
+      <div class="sub"><b>haven.collab@collabhome.io</b> &nbsp;·&nbsp; The Matrix Condominium, 3477 Reeves St, Houston, TX 77004</div>
+      <div class="badge">Ask about our $200 referral bonus</div>
+    </div>
+    <div class="qrrow" style="display:flex; gap:.16in;">
+      <div class="qrbox">
+        <img src="qr2.png" alt="Scan to view listings">
+        <span>SCAN TO VIEW<br>&amp; APPLY</span>
+      </div>
+      <div class="qrbox">
+        <img src="qr.png" alt="Scan to call">
+        <span>SCAN TO CALL</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot"><b>Equal Housing Opportunity.</b> Rents and availability subject to change. Photos representative of the community. Managed by AskDwell.</div>
+</body>
+</html>
